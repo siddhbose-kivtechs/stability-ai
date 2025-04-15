@@ -1,0 +1,510 @@
+/* Basic Reset & Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Screen Reader Only Class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+/* Container */
+.container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    max-height: 900px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between; /* Space out left, center, right */
+    align-items: center;
+    padding: 10px 25px; /* Slightly less vertical padding */
+    border-bottom: 1px solid #e0e0e0;
+    flex-shrink: 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    flex-basis: 30%; /* Adjust as needed */
+}
+.header-center {
+    display: flex;
+    justify-content: center; /* Center model select */
+    align-items: center;
+    flex-grow: 1; /* Take up remaining space */
+    padding: 0 20px; /* Add padding around center */
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-basis: 30%; /* Adjust as needed */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    background-color: #8a2be2;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-right: 15px;
+}
+
+.header h1 {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.header-model-selector {
+    /* No extra div styling needed currently */
+}
+
+.header-model-selector select {
+    padding: 6px 10px; /* Adjust padding */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9em;
+    background-color: #ffffff;
+    min-width: 180px; /* Ensure it has some width */
+    max-width: 100%; /* Don't overflow header center */
+}
+
+
+.header-controls i {
+    font-size: 1.2em;
+    color: #777;
+    cursor: pointer;
+}
+
+/* Main Content Area (Sidebar + Output) */
+.main-content {
+    display: flex;
+    flex-grow: 1;
+    overflow-y: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background-color: #e0f2fe;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e0e0e0;
+    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+.icon-button { /* Shared style for icon buttons */
+    background: none;
+    border: none;
+    font-size: 1.3em;
+    cursor: pointer;
+    color: #555;
+    padding: 5px;
+    margin: 0; /* Reset margin */
+    line-height: 1; /* Ensure consistent alignment */
+}
+.icon-button:hover {
+    color: #000;
+}
+.icon-button:disabled {
+    color: #aaa; /* Indicate disabled state */
+    cursor: not-allowed;
+}
+
+
+.back-button {
+    margin-bottom: 15px;
+    align-self: flex-start;
+}
+
+/* Form Sections */
+.form-section {
+    margin-bottom: 18px;
+}
+
+.form-section label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 0.9em;
+}
+
+/* Radio Button Group */
+.radio-group div {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+.radio-group input[type="radio"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+.radio-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+    font-size: 0.9em;
+     cursor: pointer;
+}
+
+/* REMOVED Image Upload Section Styles */
+/* #image-upload-section, #image-upload, .image-preview-container, #image-preview, .error-message { ... } */
+
+
+/* Inputs, Textareas, Selects in Sidebar */
+textarea#negative-prompt,
+.sidebar input[type="number"],
+.sidebar select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9em;
+    background-color: #ffffff;
+}
+
+textarea#negative-prompt {
+    min-height: 60px;
+    resize: vertical;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Sidebar Footer */
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #cceaff;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.settings-button {
+    margin-bottom: 0;
+    align-self: center;
+}
+
+/* Output Area */
+.output-area {
+    flex-grow: 1;
+    padding: 25px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.output-area .placeholder {
+    color: #888;
+    font-size: 1.1em;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Input Area Container (Preview + Chat) */
+.input-area-container {
+    flex-shrink: 0; /* Prevent shrinking */
+    border-top: 1px solid #e0e0e0;
+    background-color: #f8fafd;
+}
+
+/* Image Preview above Chat Input */
+#chat-image-preview-container {
+    padding: 10px 25px 5px 25px; /* Padding around preview */
+    display: flex; /* Use flex to align items */
+    align-items: center;
+    gap: 10px; /* Space between elements */
+    background-color: #e7f3fe; /* Light blue background for preview */
+    /* display: none; initially hidden via inline style */
+}
+
+#chat-image-preview {
+    max-height: 50px; /* Small preview */
+    max-width: 100px;
+    border-radius: 4px;
+    border: 1px solid #b0bec5;
+    object-fit: cover; /* Scale image nicely */
+}
+
+#remove-image-button {
+    background: #ffcdd2; /* Light red background */
+    color: #c62828; /* Darker red icon */
+    border: 1px solid #ef9a9a;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+#remove-image-button:hover {
+     background: #ef9a9a;
+     color: #b71c1c;
+}
+
+.upload-status-message {
+    font-size: 0.85em;
+    color: #455a64; /* Dark grey blue */
+    overflow: hidden; /* Prevent long filenames breaking layout */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex-grow: 1; /* Take remaining space */
+}
+.upload-status-message.error {
+    color: #d32f2f; /* Red for errors */
+}
+
+
+/* Chat Input Area */
+.chat-input-area {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 10px 15px; /* Adjust padding */
+    background-color: #f8fafd;
+}
+
+/* Paperclip Button */
+#upload-trigger-button {
+    margin-right: 10px; /* Space between paperclip and textarea */
+    font-size: 1.4em; /* Make icon slightly larger */
+    padding: 8px; /* Adjust padding */
+}
+#upload-trigger-button.has-image {
+    color: #0288d1; /* Blue color when image is attached */
+}
+
+
+.chat-input-area textarea#prompt {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    resize: none;
+    min-height: 24px;
+    max-height: 100px;
+    overflow-y: auto;
+    font-size: 1em;
+    line-height: 1.4;
+    background-color: #fff; /* Ensure white background */
+}
+
+.chat-input-area .submit-button {
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-left: 10px; /* Space between textarea and button */
+}
+
+.chat-input-area .submit-button:hover {
+    background-color: #0277bd;
+}
+
+.chat-input-area .submit-button i {
+    margin-left: 2px;
+}
+
+
+/* Loading Indicator Style */
+.loading-indicator {
+    display: flex; /* Use flex to center icon and text */
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    font-size: 1.1em;
+    color: var(--ctp-subtext0); /* Use subtext color */
+    text-align: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+.loading-indicator i {
+    font-size: 1.3em; /* Make spinner slightly larger */
+}
+
+/* Style to visually disable buttons/inputs */
+.is-loading {
+    opacity: 0.7;
+    cursor: not-allowed !important;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+}
+
+
+
+.image-grid img {
+  transition: transform 0.2s ease-in-out;
+}
+.image-grid img:hover {
+  transform: scale(1.03);
+}
+
+
+
+* Add styling for download button (from our updated JavaScript) */
+.image-container {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.download-button {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+.image-container:hover .download-button {
+    opacity: 1;
+}
+
+/* Improved error display */
+.output-area .placeholder.error {
+    color: var(--ctp-red, #d32f2f);
+    flex-direction: column;
+    gap: 15px;
+}
+
+.retry-button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.retry-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Loading state for submit button */
+.submit-button.is-loading {
+    position: relative;
+}
+
+.submit-button.is-loading i {
+    opacity: 0;
+}
+
+.submit-button.is-loading:after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
