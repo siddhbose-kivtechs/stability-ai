@@ -1,7 +1,7 @@
 
 // script.js - Complete Frontend Script
 
-const SERVER_URL = 'http://localhost:8000/api/image/stability'; // Updated to match backend port
+const SERVER_URL = 'https://aws-bedrock-stability-1.onrender.com/api/image/stability'; // Updated to match backend port
 
 document.addEventListener('DOMContentLoaded', () => {
     // --- Element Selections ---
