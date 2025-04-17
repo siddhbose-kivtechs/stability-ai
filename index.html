@@ -1,11 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Interface - Stability AI  Layout</title>
+    <title>AI Interface - Stability AI</title>
     <link rel="stylesheet" href="style_1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Added BSON library from DALL-E 3 project -->
+    <script src="https://unpkg.com/bson@4.7.2/dist/bson.browser.umd.js"></script>
 </head>
 <body>
     <div class="container">
@@ -17,8 +20,9 @@
                 </div>
             </div>
             <div class="header-center">
-                 <div class="header-model-selector">
-                    <label for="ai-model" class="sr-only">AI Model</label> <select id="ai-model">
+                <div class="header-model-selector">
+                    <label for="ai-model" class="sr-only">AI Model</label>
+                    <select id="ai-model">
                         <option value="Stable Diffusion 3.5">Stable Diffusion 3.5</option>
                     </select>
                 </div>
@@ -66,7 +70,7 @@
                     </select>
                 </div>
 
-                 <div class="form-section">
+                <div class="form-section">
                     <label for="seed">Seed</label>
                     <input type="number" id="seed" value="0">
                 </div>
@@ -76,42 +80,46 @@
                     <select id="output-format">
                         <option value="JPEG">JPEG</option>
                         <option value="PNG">PNG</option>
-                      
                     </select>
                 </div>
 
                 <div class="sidebar-footer">
-                     <button class="icon-button settings-button">
+                    <button class="icon-button settings-button">
                         <i class="fas fa-cog"></i>
                     </button>
                 </div>
             </aside>
 
-         <main class="output-area">
+            <main class="output-area">
+                <!-- Status display from DALL-E 3 project -->
+                <div id="status" class="status"></div>
+                
                 <p class="placeholder">No Images yet.</p>
                 <div class="loading-indicator" style="display: none;">
                     <i class="fas fa-spinner fa-spin"></i> Generating...
                 </div>
                 <div class="image-grid">
-                    </div>
+                    <!-- Generated images will be inserted here -->
+                </div>
             </main>
         </div>
 
         <div class="input-area-container">
-             <div id="chat-image-preview-container" style="display: none;">
-                 <img id="chat-image-preview" src="#" alt="Image Preview"/>
-                 <button id="remove-image-button" title="Remove Image">
-                     <i class="fas fa-times"></i>
-                 </button>
-                 <span id="upload-status" class="upload-status-message"></span>
-             </div>
+            <div id="chat-image-preview-container" style="display: none;">
+                <img id="chat-image-preview" src="#" alt="Image Preview"/>
+                <button id="remove-image-button" title="Remove Image">
+                    <i class="fas fa-times"></i>
+                </button>
+                <span id="upload-status" class="upload-status-message"></span>
+            </div>
 
             <footer class="chat-input-area">
                 <input type="file" id="image-upload" name="image-upload" accept="image/png, image/jpeg, image/webp" style="display: none;">
                 <button class="icon-button" id="upload-trigger-button" title="Attach Image (Image to Image mode)" disabled>
                     <i class="fas fa-paperclip"></i>
                 </button>
-                 <textarea id="prompt" placeholder="Enter prompt... (Attach image if in Image to Image mode)"></textarea>
+                <!-- Textarea will be enhanced with auto-expanding functionality -->
+                <textarea id="prompt" placeholder="Enter prompt... (Attach image if in Image to Image mode)"></textarea>
                 <button class="submit-button" title="Submit Prompt">
                     <i class="fas fa-paper-plane"></i>
                 </button>
@@ -119,6 +127,7 @@
         </div>
     </div>
 
-    <script src="script_1_2.js"></script>
+    <!-- Changed to the new script file name for our enhanced version -->
+    <script src="script_enhanced.js"></script>
 </body>
 </html>
